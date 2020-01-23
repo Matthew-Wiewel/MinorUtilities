@@ -8,40 +8,38 @@ using namespace std;
 int main()
 {
 	fstream file;
-	file.open("merchantOfVenus.txt");
-	int numReadIn = 14;
-	char cont;
-	vector<string> systems;
+	file.open("merchantOfVenus.txt"); //file containing the cultures' names
+	int numReadIn = 14; //number of cultures in the game
+	vector<string> cultures;
 	srand(time(0));
 	
+	//read the file and create vector that only have the undiscovered cultures in it
 	string val;
 	while(file >> val)
 	{
 		if(val[0] != '/')
-			systems.push_back(val);
+			cultures.push_back(val);
 	}
 	
-	for(int i = 0; i < systems.size(); i++)
+	//randomize the order of the cultures
+	for(int i = 0; i < cultures.size(); i++)
 	{
-		int swapWith = rand() % systems.size();
-		swap(systems[i], systems[swapWith]);
+		int swapWith = rand() % cultures.size();
+		swap(cultures[i], cultures[swapWith]);
 	}
 	
-	cout << "\nThere are " << systems.size() << " cultures left to discover.";
-	cout << "\nEnter 'n' for the next system discovered.";
-	
-	for(int i = 0; i < systems.size(); i++)
-	{
-		cin >> cont;
-		cout << "\nYou have found " << systems[i] << endl;
-		
-		cout << "\nThere are " << systems.size() - (i + 1) << " cultures left to discover.";
+	//with the randomized vector, we can go through the elements one by one to get the cultures
+	char cont;
+	for(int i = 0; i < cultures.size(); i++)
+	{	
 		cout << "\nEnter 'n' for the next system discovered.";
+		cin >> cont;
+	
+		cout << "\nYou have found " << cultures[i] << endl;
+		cout << "\nThere are " << cultures.size() - (i + 1) << " cultures left to discover.";
 	}
 	
 	cout << "\nAll systems found.";
 	
 	return 0;
 }
-
-		
