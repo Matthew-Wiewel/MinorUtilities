@@ -9,13 +9,12 @@ int main()
 {
 	fstream file;
 	file.open("merchantOfVenus.txt"); //file containing the cultures' names
-	int numReadIn = 14; //number of cultures in the game
 	vector<string> cultures;
 	srand(time(0));
 	
 	//read the file and create vector that only have the undiscovered cultures in it
 	string val;
-	while(file >> val)
+	while(getline(file, val))
 	{
 		if(val[0] != '/')
 			cultures.push_back(val);
