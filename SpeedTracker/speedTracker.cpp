@@ -2,6 +2,7 @@
 #include <fstream>
 using namespace std;
 
+//helper function for display of information at the beginning and end of the program
 void scoreDisplay(const char* message, int j, int m, int numGames)
 {
 	cout << message;
@@ -10,10 +11,11 @@ void scoreDisplay(const char* message, int j, int m, int numGames)
 	cout << "\n\tMatthew: " << m;
 }
 
-void updateScore(int &playerScore, int& numGames)
+//function to encapsulate logic of updating a player's score
+void updateScore(int& playerScore, int& numGames)
 {
 	playerScore++;
-	numGames++;
+	numGames++; //another point necessitates another game having been played
 }
 
 int main()
