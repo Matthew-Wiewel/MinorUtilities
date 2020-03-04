@@ -3,6 +3,9 @@ and another person in regards to games of Speed.\*
 
 Why do this instead of just using a text file? Because I wanted to overcomplicate things.
 
+NOTE: to use this program you must create a data.txt file. I have not included one in this repository as I
+did not want it to keep showing as a modified file within this repository.
+
 \*The way Speed is played is that you use a normal deck of cards. In the center are dealt
 two stacks of 5 cards and two single cards. (total 12, all face-down). Each player is dealt a hand of 5 cards that
 they are allowed to look at. They are also given 15 other cards in a deck that they do not look at from
