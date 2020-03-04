@@ -18,6 +18,12 @@ void updateScore(int& playerScore, int& numGames)
 	numGames++; //another point necessitates another game having been played
 }
 
+void negateScore(int& playerScore, int& numGames)
+{
+	playerScore--;
+	numGames--;
+}
+
 int main()
 {
 	fstream file;
@@ -34,6 +40,7 @@ int main()
 	scoreDisplay("\nAt the start of this session the scores were: \n", justinScore, matthewScore, numGames);
 	
 	cout << "\nTo enter new scores, enter 'j' for a Justin win, 'm' for a Matthew win, or 'q' to stop.";
+	cout << "\nTo remove a score, enter \"-j\" or \"-m\" to remove a win from Justin or Matthew respectively.";
 	cout << "\nThis session: ";
 	
 	//variables for while loop
@@ -57,6 +64,15 @@ int main()
 			case 'M':
 			{
 				updateScore(matthewScore, numGames);
+				break;
+			}
+			case '-':
+			{
+				cin >> who;
+				if(who == 'j' || who == 'J')
+					negateScore(justinScore, numGames);
+				else if(who == 'm' || who == 'M')
+					negateScore(matthewScore, numGames);
 				break;
 			}
 			case 'q':
