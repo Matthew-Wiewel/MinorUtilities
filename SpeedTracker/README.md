@@ -3,6 +3,13 @@ and another person in regards to games of Speed.\*
 
 Why do this instead of just using a text file? Because I wanted to overcomplicate things.
 
+Note: The data.txt file in my local directory is not present in this repository. If you wish to use this
+program, first create a data.txt file of your own. If has the format of
+
+<number of games>
+<number of matthew-player wins>
+<number of justin-player wins>
+
 \*The way Speed is played is that you use a normal deck of cards. In the center are dealt
 two stacks of 5 cards and two single cards. (total 12, all face-down). Each player is dealt a hand of 5 cards that
 they are allowed to look at. They are also given 15 other cards in a deck that they do not look at from
