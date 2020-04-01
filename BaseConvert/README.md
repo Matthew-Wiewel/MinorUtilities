@@ -1,0 +1,1 @@
+I find myself googling hex to decimal or vice versa with relative frequency. (More for curiosity on minor things I come across than anything practical.) So I wrote this simple program to hopefully reduce the number of internet searches I devote to the task.
