@@ -3,9 +3,9 @@
 using namespace std;
 
 //helper function for display of information at the beginning and end of the program
-void scoreDisplay(const char* message, int j, int m, int numGames)
+void scoreDisplay(int j, int m, int numGames)
 {
-	cout << message;
+	cout << "\nAt the end of this session the scores are: \n";
 	cout << "\n\tThere have been " << numGames << " games.";
 	cout << "\n\tJustin: " << j;
 	cout << "\n\tMatthew: " << m;
@@ -84,7 +84,7 @@ int main()
 		}
 	}
 	
-	scoreDisplay("\nAt the end of this session the scores are: \n", justinScore, matthewScore, numGames);
+	scoreDisplay(justinScore, matthewScore, numGames);
 	
 	file.close(); //closing prior to writing is necessary in order to clear the file for the new data
 	file.open("data.txt"); //hence the purpose of this close and open
