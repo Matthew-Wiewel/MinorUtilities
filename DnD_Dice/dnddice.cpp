@@ -10,6 +10,7 @@ int main()
 	int rolls;
 	int sides;
 	int roll;
+	int sum;
 	srand(time(0));
 	
 	while(again == 'y' || again == 'Y')
@@ -28,13 +29,16 @@ int main()
 		{
 			get_num_above_zero(rolls, "\nEnter number of rolls: ");
 			get_num_above_zero(sides, "\nEnter number of sides: ");
+			sum = 0;
 			
 			cout << "\nRolling d" << sides << " for " << rolls << " rolls.\n";
 			for(int i = 0; i < rolls; i++)
 			{
 				roll = (rand() % sides) + 1;
+				sum += roll;
 				cout << roll << " ";
 			}
+			cout << "\nSum: " << sum;
 			
 		}
 		
