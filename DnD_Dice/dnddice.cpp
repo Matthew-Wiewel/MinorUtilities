@@ -40,7 +40,6 @@ int main()
 			}
 			cout << "\nSum: " << sum;
 			
-			//automatically check advantage and disadvantage of attack rolls
 			if(rolls == 2 && sides == 20)
 			{
 				int a = roll;
