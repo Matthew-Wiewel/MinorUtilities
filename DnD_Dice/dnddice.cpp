@@ -42,10 +42,10 @@ int main()
 			
 			if(rolls == 2 && sides == 20)
 			{
-				int a = roll;
-				int b = sum - roll;
-				cout << "\nAdvantage: " << ((a > b) ? a : b);
-				cout << "\nDisadvantage: " << ((a < b) ? a : b);
+				int die_1 = roll;
+				int die_2 = sum - roll;
+				cout << "\nAdvantage: " << ((die_1 > die_2) ? die_1 : die_2);
+				cout << "\nDisadvantage: " << ((die_1 < die_2) ? die_1 : die_2);
 			}
 		}
 		
