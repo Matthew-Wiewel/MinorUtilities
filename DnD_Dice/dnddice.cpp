@@ -6,17 +6,17 @@ void get_num_above_zero(int& num, const char* prompt);
 
 int main()
 {
-	char again = 'y';
 	int rolls;
-	int sides;
+	int sides = 1;
 	int roll;
 	int sum;
 	srand(time(0));
 	
-	while(again == 'y' || again == 'Y')
+	while(sides != 0)
 	{
 		cout << "\nEnter number of sides to roll 1 die.";
-		cout << "\nEnter 0 to make cutsom with multiple rolls.";
+		cout << "\nEnter -1 to make custom with multiple rolls.";
+		cout << "\nEnter 0 to quit.";
 		cout << "\nInput: ";
 		cin >> sides;
 		
@@ -25,7 +25,7 @@ int main()
 			roll = (rand() % sides) + 1;
 			cout << "\nRolling 1 d" << sides << ": " << roll;
 		}
-		else
+		else if(sides < 0)
 		{
 			get_num_above_zero(rolls, "\nEnter number of rolls: ");
 			get_num_above_zero(sides, "\nEnter number of sides: ");
@@ -40,10 +40,16 @@ int main()
 			}
 			cout << "\nSum: " << sum;
 			
+			if(rolls == 2 && sides == 20)
+			{
+				int a = roll;
+				int b = sum - roll;
+				cout << "\nAdvantage: " << ((a > b) ? a : b);
+				cout << "\nDisadvantage: " << ((a < b) ? a : b);
+			}
 		}
 		
-		cout << "\nRoll another die? (Y/N): ";
-		cin >> again;
+		cout << "\n";
 	}
 	
 	return 0;
