@@ -9,3 +9,6 @@ DnD_BattleMap_Simple/map.exe
 a.cpp
 a.exe
 DnD_Dice/SillyTonkaPunishment.txt
+DnD_Dice/__pycache__
+MafiaRoles/roles.txt
+MafiaRoles/players.txt
