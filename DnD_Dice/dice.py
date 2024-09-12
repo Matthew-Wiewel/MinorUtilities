@@ -10,6 +10,7 @@ note: remember to have a \n at the end of the last one so it automatically enter
 
 # includes math import for math.sum([]) utility
 import_string = "import math\n" +\
+                "from dice import d100 as d100\n" +\
                 "from dice import d20 as d20\n" +\
                 "from dice import d12 as d12\n" +\
                 "from dice import d10 as d10\n" +\
@@ -38,6 +39,7 @@ dice_help = lambda : print(help_string)
 _max = lambda val1, val2 : val1 if val1 > val2 else val2
 _min = lambda val1, val2 : val1 if val1 < val2 else val2
 _custom_helper = lambda sides : random.randint(1,sides)
+_d100_helper = lambda : random.randint(1,100)
 _d20_helper = lambda : random.randint(1,20)
 _d12_helper = lambda : random.randint(1,12)
 _d10_helper = lambda : random.randint(1,10)
@@ -49,6 +51,7 @@ dis = lambda the_die : _min(the_die(), the_die()) # see above
 roll_with_modifier = lambda the_die, modifier : the_die() + modifier # in practive I found it more intuitive to just do a +mod instead of using this method
 roll_custom_with_modifer = lambda sides, modifier : _custom_helper(sides) + modifier
 
+d100 = lambda num_rolls=1 : _d100_helper() if num_rolls == 1 else [ _d100_helper() for i in range(num_rolls) ]
 d20 = lambda num_rolls=1 : _d20_helper() if num_rolls == 1 else [ _d20_helper() for i in range(num_rolls) ]
 d12 = lambda num_rolls=1 : _d12_helper() if num_rolls == 1 else [ _d12_helper() for i in range(num_rolls) ]
 d10 = lambda num_rolls=1 : _d10_helper() if num_rolls == 1 else [ _d10_helper() for i in range(num_rolls) ]
