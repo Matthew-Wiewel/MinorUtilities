@@ -21,6 +21,7 @@ import_string = "import math\n" +\
                 "from dice import lb as lb\n" +\
                 "from dice import ss as ss\n" +\
                 "from dice import talons as talons\n" +\
+                "from dice import gen_abilities as gen_abilities\n" +\
                 "\n\n\n" # to have some spacing on the command prompt
 
 help_string = "each die defaults to one roll d20() return a 1d20 result\n" +\
@@ -148,3 +149,14 @@ def ss():
 
 def talons():
     print("in progress")
+
+def gen_abilities():
+    """
+    generates ability scores for a character using 4d6 drop lowest
+    TODO: add option to reroll ones. Both once and always
+    """
+    abilities = [ d6(4) for i in range(6) ]
+    for ability in abilities:
+        ability.sort()
+    values = [ math.fsum(ability[1:]) for ability in abilities]
+    return (abilities, values)
